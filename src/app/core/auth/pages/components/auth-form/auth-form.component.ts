@@ -3,12 +3,14 @@ import {
   Component,
   inject,
   input,
+  output,
   TemplateRef,
 } from '@angular/core';
 import { AuthContainerComponent } from '../auth-container/auth-container.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputErrorComponent } from '../input-error/input-error.component';
 import { CommonModule } from '@angular/common';
+import { AuthFormData } from '../../../models/auth.model';
 
 @Component({
   selector: 'app-auth-form',
@@ -26,6 +28,7 @@ export class AuthFormComponent {
   description = input.required<string>();
   buttonText = input.required<string>();
   footerTpl = input.required<TemplateRef<any>>();
+  submitForm = output<AuthFormData>();
 
   private fb = inject(FormBuilder);
 
@@ -50,7 +53,7 @@ export class AuthFormComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log(this.form.value);
+      this.submitForm.emit(this.form.value as AuthFormData);
     } else {
       this.form.markAllAsTouched();
     }

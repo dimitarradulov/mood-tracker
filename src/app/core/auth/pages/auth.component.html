@@ -9,8 +9,9 @@
   <app-auth-form
     [title]="title"
     [description]="description"
-    [buttonText]="buttonText"
+    [buttonText]="authService.loading() ? 'Loading...' : buttonText"
     [footerTpl]="footerTpl"
+    (submitForm)="onSubmit($event)"
   />
 </app-auth-layout>
 
