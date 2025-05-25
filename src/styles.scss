@@ -17,3 +17,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  input {
+    @apply rounded-[10px] px-4 py-3 border border-neutral-300 placeholder:text-neutral-600 placeholder:text-preset-6-regular;
+
+    &:hover {
+      @apply border-neutral-600;
+    }
+
+    &:focus-visible {
+      @apply border-blue-600 outline-none;
+    }
+  }
+
+  a {
+    @apply text-blue-600;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-blue-600 text-white inline-block text-preset-5 rounded-[10px] px-8 py-3;
+  }
+
+  .box {
+    @apply py-10 px-8 bg-white rounded-2xl shadow-standard sm:w-[530px];
+  }
+}

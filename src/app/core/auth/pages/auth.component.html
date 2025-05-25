@@ -1,0 +1,25 @@
+@let title = authMode() === "login" ? "Welcome back!" : "Create an account";
+@let description =
+  authMode() === "login"
+    ? "Login to continue tracking your mood and sleep."
+    : "Join to track your daily mood and sleep with ease.";
+@let buttonText = authMode() === "login" ? "Log In" : "Sign Up";
+
+<app-auth-layout>
+  <app-auth-form
+    [title]="title"
+    [description]="description"
+    [buttonText]="buttonText"
+    [footerTpl]="footerTpl"
+  />
+</app-auth-layout>
+
+<ng-template #footerTpl>
+  @if (authMode() === "login") {
+    <p>Haven't got an account? <a routerLink="/signup">Sign Up</a></p>
+  }
+
+  @if (authMode() === "signup") {
+    <p>Already got an account? <a routerLink="/login">Log In</a></p>
+  }
+</ng-template>

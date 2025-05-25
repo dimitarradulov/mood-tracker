@@ -1,0 +1,12 @@
+@if (showError()) {
+  <p class="text-preset-9 text-red-700 flex gap-1">
+    <img src="assets/images/error.svg" alt="alert icon" />
+    <span>
+      @for (error of errors() | keyvalue; track error.key) {
+        @if (errorMessages()[error.key]) {
+          {{ errorMessages()[error.key] }}
+        }
+      }
+    </span>
+  </p>
+}

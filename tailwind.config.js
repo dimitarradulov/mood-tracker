@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
+      boxShadow: {
+        standard: "0px 8px 16px rgba(32, 37, 41, 0.1)",
+      },
       spacing: {
         0: "0px",
         "025": "2px",
@@ -60,27 +63,27 @@ export default {
         // Default text presets
         "preset-1": [
           "52px",
-          { lineHeight: "140%", letterSpacing: "-2px", fontWeight: "700" },
+          { lineHeight: "140%", letterSpacing: "-0.2px", fontWeight: "700" },
         ],
         "preset-1-mobile": [
           "46px",
-          { lineHeight: "120%", letterSpacing: "-2px", fontWeight: "700" },
+          { lineHeight: "120%", letterSpacing: "-0.2px", fontWeight: "700" },
         ],
         "preset-2": [
           "40px",
-          { lineHeight: "120%", letterSpacing: "-3px", fontWeight: "700" },
+          { lineHeight: "120%", letterSpacing: "-0.3px", fontWeight: "700" },
         ],
         "preset-2-mobile": [
           "32px",
-          { lineHeight: "120%", letterSpacing: "-3px", fontWeight: "700" },
+          { lineHeight: "120%", letterSpacing: "-0.3px", fontWeight: "700" },
         ],
         "preset-3": [
           "32px",
-          { lineHeight: "140%", letterSpacing: "-3px", fontWeight: "700" },
+          { lineHeight: "140%", letterSpacing: "-0.3px", fontWeight: "700" },
         ],
         "preset-3-mobile": [
           "28px",
-          { lineHeight: "130%", letterSpacing: "-3px", fontWeight: "700" },
+          { lineHeight: "130%", letterSpacing: "-0.3px", fontWeight: "700" },
         ],
         "preset-4": [
           "24px",
@@ -109,11 +112,11 @@ export default {
         ],
         "preset-6-regular": [
           "18px",
-          { lineHeight: "140%", letterSpacing: "-3px", fontWeight: "400" },
+          { lineHeight: "140%", letterSpacing: "-0.3px", fontWeight: "400" },
         ],
         "preset-7": [
           "15px",
-          { lineHeight: "120%", letterSpacing: "-3px", fontWeight: "400" },
+          { lineHeight: "120%", letterSpacing: "-0.3px", fontWeight: "400" },
         ],
         "preset-8": [
           "13px",
@@ -141,7 +144,7 @@ export default {
     ({ addUtilities }) => {
       const newUtilities = {
         ".bg-gradient-light": {
-          background: "linear-gradient(180deg, #5F5FF7 99%, #E0E0FF 100%)",
+          background: "linear-gradient(180deg, #F5F5FF 72.99%, #E0E0FF 100%)",
         },
       };
       addUtilities(newUtilities);
