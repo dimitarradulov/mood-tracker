@@ -10,3 +10,11 @@ export type AuthState = {
   error: string | null;
   session: AuthSession | null;
 };
+
+export type Profile = {
+  id: string;
+  name?: string;
+  avatar_url?: string;
+  created_at: string;
+  updated_at: string;
+};
