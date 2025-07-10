@@ -9,10 +9,18 @@
   <app-auth-form
     [title]="title"
     [description]="description"
-    [buttonText]="authService.loading() ? 'Loading...' : buttonText"
+    [buttonText]="authStore.loading() ? 'Loading...' : buttonText"
     [footerTpl]="footerTpl"
+    [status]="{ error: authStore.error(), loading: authStore.loading() }"
     (submitForm)="onSubmit($event)"
   />
+
+  <button
+    class="btn btn-secondary absolute top-4 right-4"
+    (click)="authStore.signOut()"
+  >
+    Sign out
+  </button>
 </app-auth-layout>
 
 <ng-template #footerTpl>
