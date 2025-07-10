@@ -28,6 +28,7 @@ export class AuthFormComponent {
   description = input.required<string>();
   buttonText = input.required<string>();
   footerTpl = input.required<TemplateRef<any>>();
+  status = input.required<{ error: string | null; loading: boolean }>();
   submitForm = output<AuthFormData>();
 
   private fb = inject(FormBuilder);

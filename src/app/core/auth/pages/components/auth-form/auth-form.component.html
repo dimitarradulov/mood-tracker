@@ -41,7 +41,23 @@
       ></app-input-error>
     </div>
 
-    <button type="submit" class="btn">{{ buttonText() }}</button>
+    <button type="submit" class="btn" [disabled]="status().loading">
+      @if (status().loading) {
+        <span class="loading-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </span>
+      } @else {
+        {{ buttonText() }}
+      }
+    </button>
+
+    @if (status().error) {
+      <div class="text-red-600 text-sm text-center mt-3">
+        {{ status().error }}
+      </div>
+    }
   </form>
 
   <div class="text-center text-preset-6-regular text-neutral-600" footer>
