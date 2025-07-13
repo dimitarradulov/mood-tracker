@@ -16,5 +16,5 @@ import { ValidationErrors } from '@angular/forms';
 export class InputErrorComponent {
   showError = input(false, { transform: booleanAttribute });
   errors = input<ValidationErrors | null | undefined>(null);
-  errorMessages = input<{ [key: string]: string }>({});
+  errorMessages = input<Record<string, string>>({});
 }

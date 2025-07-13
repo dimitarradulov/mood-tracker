@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { AuthFormComponent } from './components/auth-form/auth-form.component';
+import { AuthFormComponent } from '../components/auth-form/auth-form.component';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
-import { AuthLayoutComponent } from '../../layout/auth-layout/auth-layout.component';
-import { AuthFormData, AuthMode } from '../models/auth.model';
-import { AuthStore } from '../store/auth.store';
+import { AuthLayoutComponent } from '../../../layout/auth-layout/auth-layout.component';
+import { AuthFormData, AuthMode } from '../../models/auth.model';
+import { AuthStore } from '../../data/auth.store';
 
 @Component({
   selector: 'app-auth',
@@ -24,10 +24,9 @@ export class AuthComponent {
 
   onSubmit(value: AuthFormData) {
     if (this.authMode() === 'signup') {
-      console.log('Signing up with:', value);
       this.authStore.signUp(value.email, value.password);
     } else {
-      // this.authService.signIn(value.email, value.password);
+      this.authStore.signIn(value.email, value.password);
     }
   }
 }

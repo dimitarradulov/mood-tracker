@@ -27,7 +27,7 @@ export class AuthFormComponent {
   title = input.required<string>();
   description = input.required<string>();
   buttonText = input.required<string>();
-  footerTpl = input.required<TemplateRef<any>>();
+  footerTpl = input.required<TemplateRef<unknown>>();
   status = input.required<{ error: string | null; loading: boolean }>();
   submitForm = output<AuthFormData>();
 
